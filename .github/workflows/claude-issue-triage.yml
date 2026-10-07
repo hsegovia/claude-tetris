@@ -55,7 +55,11 @@ jobs:
                línea `<!-- claude-triage -->`. Si ya existe un comentario con ese
                marcador (búscalo con `gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments`),
                actualízalo con `gh api -X PATCH repos/${{ github.repository }}/issues/comments/<id> -f body=...`
-               en lugar de crear otro. Escríbelo en español con estas secciones:
+               en lugar de crear otro. Escríbelo en español y en formato Markdown
+               válido para GitHub (GitHub Flavored Markdown: encabezados `##`,
+               listas, negritas, tablas, bloques de código con ``` y lenguaje,
+               referencias a archivos en `código en línea`), de modo que GitHub
+               lo renderice correctamente. Usa estas secciones:
                - **Resumen** del problema
                - **Clasificación** (tipo, área, prioridad y por qué)
                - **Causa probable** (con archivos y funciones concretas de game.js u otros)
